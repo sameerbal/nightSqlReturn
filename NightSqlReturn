@@ -3,20 +3,24 @@ package sqlPathReading;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.util.ArrayList;
 
 public class SqlQueryReturn {
 	
 	public static String trgSQL,srcSQL;
 	public static SqlFileReturn path = new SqlFileReturn();
+	public static SqlQueryReturn query = new SqlQueryReturn();
+	public static ArrayList<String> ar = new ArrayList<String>();
+	public static ArrayList<String> ar1 = new ArrayList<String>();
 	
-	public static String sourceSqlReturn()
+	public static ArrayList<String> sourceSqlReturn()
 	{
-		return srcSQL;
+		return ar;
 	}
 	
-	public static String targetSqlReturn()
+	public static ArrayList<String> targetSqlReturn()
 	{
-		return trgSQL;
+		return ar1;
 	}
 	
 	//sourceSql method which will return String of SQLQuery
@@ -35,6 +39,7 @@ public class SqlQueryReturn {
            srcStrBuf.append(srcRdPath); 
     } 
     srcSQL = srcStrBuf.toString();
+    ar.add(srcSQL);
     //return trgSQL;
     }
 	
@@ -54,6 +59,7 @@ public class SqlQueryReturn {
            trgStrBuf.append(trgRdPath); 
     } 
     trgSQL = trgStrBuf.toString();
+    ar1.add(trgSQL);
     //return srcSQL;
     }
 
